@@ -18,6 +18,8 @@ namespace Zeugnis
 		{
 			int i= 0;
 			int f= 0;
+		
+		
 			Console.WriteLine("Vorname:");
 			
 			// TODO: Implement Functionality Here
@@ -84,11 +86,15 @@ namespace Zeugnis
 			
 			int Physik =Convert.ToInt32(Console.ReadLine());
 			
-			Console.Write("Notendurchsnitt:");
+			double Notendurchschnitt =(Deutsch+Englisch+Politik+Musik+Geschichte+Erdkunde+(Kunst*2)+(Physik*2))/10.0;
 			
-			int Notendurchschnitt =Convert.ToInt32(Console.ReadLine());
 			
-			Console.Write("Versetzung:");
+			
+			Console.WriteLine("Notendurchsnitt: {0:F1}",Notendurchschnitt);
+			
+		
+			
+			Console.WriteLine("Versetzung:");
 			
 			
 			if (Deutsch < 05)
@@ -142,6 +148,7 @@ namespace Zeugnis
 			
 			Console.WriteLine("Der Schüler wird Versetzt");	
 			}
+			
 			
 				
 			
