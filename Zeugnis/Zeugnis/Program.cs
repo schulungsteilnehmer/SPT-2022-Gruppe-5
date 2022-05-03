@@ -13,20 +13,22 @@ namespace Zeugnis
 	class Program
 		
 	{
-		int i= 0;
+		
 		public static void Main(string[] args)
 		{
-			Console.WriteLine("Name:");
+			int i= 0;
+			int f= 0;
+			Console.WriteLine("Vorname:");
 			
 			// TODO: Implement Functionality Here
 			
-			String Name =Console.ReadLine();
-			
-			Console.Write("Vorname:");
-			
 			String Vorname =Console.ReadLine();
+			
+			Console.Write("Name:");
+			
+			String Name =Console.ReadLine();
 		
-			Console.Write("Datum:");
+			Console.Write("Datum (TTMMJJJJ):");
 			
 			String Datum =Console.ReadLine();
 			
@@ -40,7 +42,7 @@ namespace Zeugnis
 			
 			Console.Write("Unentschuldigt:");
 			
-			String Unentschuldigt =Console.ReadLine();
+			int Unentschuldigt =Convert.ToInt32(Console.ReadLine());
 			
 			Console.Write("Fächer (Angabe in Notenpunkten)");
 			
@@ -48,94 +50,100 @@ namespace Zeugnis
 			
 			Console.Write("Deutsch:");
 			
-			int Deutsch =Console.ReadLine();
+			int Deutsch = Convert.ToInt32(Console.ReadLine());
 			
 			Console.Write("Englisch:");
 			
-			int Englisch =Console.ReadLine();
+			int Englisch =Convert.ToInt32(Console.ReadLine());
 			
 			Console.Write("Musik:");
 			
-			int Musik =Console.ReadLine();
+			int Musik =Convert.ToInt32(Console.ReadLine());
 			
 			Console.Write("Geschichte:");
 			
-			int Geschichte =Console.ReadLine();
+			int Geschichte =Convert.ToInt32(Console.ReadLine());
 			
 			Console.Write("Politik:");
 			
-			int Politik =Console.ReadLine();
+			int Politik =Convert.ToInt32(Console.ReadLine());
 			
 			Console.Write("Erdkunde:");
 			
-			int Erdkunde =Console.ReadLine();
+			int Erdkunde =Convert.ToInt32(Console.ReadLine());
 			
 			Console.Write("Leistungskurse (Angabe in Notenpunkten)");
 			
-			int Leistungskurse =Console.ReadLine();
+			String Leistungskurse =Console.ReadLine();
 			
 			Console.Write("Kunst:");
 			
-			int Kunst =Console.ReadLine();
+			int Kunst =Convert.ToInt32(Console.ReadLine());
 			
 			Console.Write("Physik:");
 			
-			int Physik =Console.ReadLine();
+			int Physik =Convert.ToInt32(Console.ReadLine());
 			
 			Console.Write("Notendurchsnitt:");
 			
-			int Notendurchschnitt =Console.ReadLine();
+			int Notendurchschnitt =Convert.ToInt32(Console.ReadLine());
 			
 			Console.Write("Versetzung:");
 			
-			String Versetzung =Console.ReadLine();
 			
 			if (Deutsch < 05)
 			{
-			i= i+1;
+				i= i+1;
 			}
 			if (Englisch < 05)
 			{
-			i= i+1;
+				i= i+1;
 			}
 			if (Musik < 05)
 			{
-			i= i+1;
+				i= i+1;
 			}
 			if (Geschichte < 05)
 			{
-			i= i+1;	
+				i= i+1;	
 			}
 			if (Politik < 05)
 			{
-			i= i+1;
+				i= i+1;
 			}
 			if (Erdkunde < 05)
 			{
-			i= i+1;
+				i= i+1;
 			}
 			if (Kunst < 05)
 			{
-			i= i+1;
+				i= i+1;
 			}
 			if (Physik < 05)
 			{
-			i= i+1;
+				i= i+1;
 			}
 			
-			if (i > 1)
+			if (i > 2)
 			{
-			Console.Write("Nein:");
+				f = f+1;
+			}
 			
-			String Nein =Console.ReadLine();
+			if (Unentschuldigt > 29)
+			{
+				f =f+1;
+			}
+			if(f >0)
+			{
+			Console.WriteLine("Der Schüler wird nicht Versetzt");	
 			}
 			else
-				{
-			Console.Write("Ja:");
+			{
 			
-			String Ja =Console.ReadLine();
-					
-				}
+			Console.WriteLine("Der Schüler wird Versetzt");	
+			}
+			
+				
 			
 			Console.Write("Press any key to continue . . . ");
 			Console.ReadKey(true);
