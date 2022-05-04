@@ -150,8 +150,15 @@ namespace Zeugnis
 			Console.WriteLine("Der Schüler wird Versetzt");	
 			}
 		
+			Console.WriteLine("Ausdrucken?");
 			
-				// File name  
+			String Ausdrucken =Console.ReadLine();
+		
+			
+			
+			if (Ausdrucken.Equals("Ja")||Ausdrucken.Equals("ja") || Ausdrucken.Equals("JA") || Ausdrucken.Equals("J") || Ausdrucken.Equals("j"))
+			{
+			// File name
           string fileName = @"C:\Users\schulung.SCHULUNGNB-03\Desktop\Zeugnis.txt";  
           
           StreamWriter writer = new StreamWriter(fileName, true);
@@ -198,7 +205,7 @@ namespace Zeugnis
                 writer.Close();
          
        Console.ReadKey();
-			
+			}
 			}
       
          
