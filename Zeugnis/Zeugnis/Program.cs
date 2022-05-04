@@ -6,7 +6,9 @@
  * 
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
-using System;
+ using System;  
+ using System.IO;  
+ using System.Text; 
 
 namespace Zeugnis
 {
@@ -26,23 +28,23 @@ namespace Zeugnis
 			
 			String Vorname =Console.ReadLine();
 			
-			Console.Write("Name:");
+			Console.WriteLine("Name:");
 			
 			String Name =Console.ReadLine();
 		
-			Console.Write("Datum (TTMMJJJJ):");
+			Console.WriteLine("Datum (TTMMJJJJ):");
 			
 			String Datum =Console.ReadLine();
 			
-			Console.Write("Klasse:");
+			Console.WriteLine("Klasse:");
 			
 			String Klasse =Console.ReadLine();
 			
-			Console.Write("Fehltage:");
+			Console.WriteLine("Fehltage:");
 			
 			String Fehltage =Console.ReadLine();
 			
-			Console.Write("Unentschuldigt:");
+			Console.WriteLine("Unentschuldigt:");
 			
 			int Unentschuldigt =Convert.ToInt32(Console.ReadLine());
 			
@@ -88,12 +90,11 @@ namespace Zeugnis
 			
 			double Notendurchschnitt =(Deutsch+Englisch+Politik+Musik+Geschichte+Erdkunde+(Kunst*2)+(Physik*2))/10.0;
 			
-			
+			Notendurchschnitt = (17 - Notendurchschnitt)/3;
 			
 			Console.WriteLine("Notendurchsnitt: {0:F1}",Notendurchschnitt);
 			
-		
-			
+			int Versetzung=0; 
 			Console.WriteLine("Versetzung:");
 			
 			
@@ -148,12 +149,60 @@ namespace Zeugnis
 			
 			Console.WriteLine("Der Schüler wird Versetzt");	
 			}
+		
 			
+				// File name  
+          string fileName = @"C:\Users\schulung.SCHULUNGNB-03\Desktop\Zeugnis.txt";  
+          
+          StreamWriter writer = new StreamWriter(fileName, true);
+             
+                writer.WriteLine("==========Zeugnis==========");    
+                writer.WriteLine("Vorname:" + Vorname);  
+                writer.WriteLine("Name:" + Name); 
+                writer.WriteLine("Datum:" + Datum);
+                writer.WriteLine("Klasse:" + Klasse);   
+                writer.WriteLine("==========================="); 
+				writer.WriteLine(" ");                
+                writer.WriteLine("Fächer (Angaben in Notenpunkten)");  
+                writer.WriteLine("Deutsch:" + Deutsch);  
+                writer.WriteLine("Englisch:" + Englisch);  
+                writer.WriteLine("Musik:" + Musik);  
+                writer.WriteLine("Geschichte:" + Geschichte);  
+                writer.WriteLine("Politik:" + Politik);
+                writer.WriteLine("Erdkunde:" + Erdkunde);
+                writer.WriteLine(" ");
+                writer.WriteLine("===========================");
+                writer.WriteLine(" ");
+                writer.WriteLine("Leistungskurse (Angaben in Notenpunkten)");  
+                writer.WriteLine("Kunst:" + Kunst);  
+                writer.WriteLine("Physik:" + Physik);  
+                writer.WriteLine(" ");
+                writer.WriteLine("Notendurchsnitt: {0:F1}",Notendurchschnitt);
+                writer.WriteLine(" ");
+                writer.WriteLine("===========================");
+                writer.WriteLine("Fehlage:" + Fehltage);
+                writer.WriteLine("Unentschuldigt:" + Unentschuldigt);
+                writer.WriteLine("===========================");
+                writer.WriteLine(" ");
+                if(f >0)
+			{
+			writer.WriteLine("Der Schüler wird nicht Versetzt");	
+			}
+			else
+			{
 			
-				
+			writer.WriteLine("Der Schüler wird Versetzt");	
+			}
+
+   
+                writer.Close();
+         
+       Console.ReadKey();
 			
-			Console.Write("Press any key to continue . . . ");
-			Console.ReadKey(true);
+			}
+      
+         
+    
+
 		}
 	}
-}
